@@ -221,5 +221,27 @@ $(( 1 + 2 ))
 Created and maintained by Linux bash iteself. This type of variables are defined in capital letters.<br>
 There are many shell inbuilt variables which are used for administration and writing shell scripts.<br>
 We can see all system variables with the help og `env` command.
+
+```hcl
+$HOME-------> Represents the current user's home directory
+$PWD--------> Represents the present working directory
+$USER-------> Represents the username of the current user
+$PATH-------> Specifies the colon-separated list of directories in which the shell looks for executables files
+$SHELL------> Represents the path of current shell
+$RANDOM-----> Generates a random integer between 0 and 32767
+$HOSTNAME---> Represents the hostname of the machine
+$UID--------> Represents the user ID of the current user
+```
+</b>
+</details>
+
+<details>
+<summary>What are the wildcards in bash?</summary><b><br>
+
+Wildcards are special characters used to perform pattern matching when working with files.<br>
+1. `ls *.txt` ---> This commands lists all files in current directory
+2. `ls file?.txt` ---> This commands list file1.txt, fileA.txt but not file12.txt
+3. `ls file[1-3-.txt` ---> This commands list file1,file2 and file3 not file4
+4. `mv file{1,2,3}.txt directory/ ---> This commands move file1,file2 and file3 to the directory.
 </b>
 </details>
