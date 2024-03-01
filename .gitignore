@@ -1,0 +1,40 @@
+# Ignore compiled binaries and executables
+*.exe
+*.out
+
+# Ignore object files
+*.o
+*.obj
+
+# Ignore backup and temporary files
+*~
+*.bak
+
+# Ignore logs and log files
+logs/
+*.log
+
+# Ignore generated files
+*.generated
+
+# Ignore dependencies and package files
+node_modules/
+vendor/
+
+# Ignore user-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment-specific files
+.env
+.env.local
+
+# Ignore editor and IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore system files
+*.DS_Store
+Icon?
