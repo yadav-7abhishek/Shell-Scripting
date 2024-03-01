@@ -33,7 +33,7 @@ Feel free to experiment with these projects or use them as inspiration for your 
 If you have any questions, suggestions, or just want to connect, you can find me on LinkedIn and Twitter:
 
 - [Email](mailto:07abhiyadav7@gmail.com)
-- [LinkedIn](https.linkedin.com/in/7abhishek-yadav)
+- [LinkedIn](https://linkedin.com/in/7abhishek-yadav)
 - [Twitter](https://x.com/GyanniInsaan)
 
 Feel free to reach out! I'd love to hear from you.
