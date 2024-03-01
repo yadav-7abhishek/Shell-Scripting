@@ -242,6 +242,6 @@ Wildcards are special characters used to perform pattern matching when working w
 1. `ls *.txt` ---> This commands lists all files in current directory
 2. `ls file?.txt` ---> This commands list file1.txt, fileA.txt but not file12.txt
 3. `ls file[1-3-.txt` ---> This commands list file1,file2 and file3 not file4
-4. `mv file{1,2,3}.txt directory/ ---> This commands move file1,file2 and file3 to the directory.
+4. `mv file{1,2,3}.txt directory/` ---> This commands move file1,file2 and file3 to the directory.
 </b>
 </details>
