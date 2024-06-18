@@ -1,49 +1,50 @@
 #!/bin/bash
 
-# function to add user
-function add_user {
-    read -p "Enter the username: " username
-    if id "$username" 2>/dev/null; then
-        echo "$username already exists"
-    else
-        sudo useradd "$username"
-        read -sp "Enter password for $username: " password
-        echo "username created successfully"
-    fi
+# Function to check if user exists
+function check_user() {
+  read -p "Enter the username: " username
+  if id "$username"; then
+    echo "User already exists"
+  else
+    sudo useradd "$username"
+    echo "$username added successfully "
+  fi
 }
 
-# function to delete existing user
-function delete_user {
-    read -p "Enter the username to delete: " username
-    if id "username" 2>/dev/null; then
-        sudo userdel "$username"
-        echo ""$username" deleted successfully"
-    else
-        echo "Username does not exists"
-        exit 1
-    fi
-}
-
-# function to reset the password of the user
-function reset_password {
-   read -p "Enter the username to change password: " username
-    if id "$username" 2>/dev/null; then
-        sudo passwd "$username"
-        echo ""$username" password changed successfully"
-    else
-        echo "Username does not exists"
-        exit 1
-    fi
-}
-
-# function to show user name
-function show_users {
-    echo "Users in the system are"
-    awk -F: '{print "NR-  " $1}' /etc/passwd
-    if [ $? -ne 0 ]; then
-    echo "Error in function"
+# Function to delete user
+function delete_user() {
+  read -p "Enter the username: " username
+  if id "$username"; then
+    sudo userdel "$username"
+    echo "User deleted successfully"
+  else
+    echo "User does not exist"
     exit 1
-    fi
+  fi
 }
-add_user
-show_users
+
+# Function to set password for user
+function users_password() {
+   read -p "Enter the user for which password is to be set: " username
+   if id "$username"; then
+           read -p "Enter the lenght of the password: " length
+           password= openssl rand -base64 48 | cut -c1-$length
+           sleep 2
+           echo "password provided by system is '$password'"
+           sudo passwd "$username"
+   else
+           echo "User does not exist"
+   fi
+}
+
+
+# Check first argument
+if [[ "$1" == "user" ]]; then
+  check_user
+elif [[ "$1" == "delete" ]]; then
+  delete_user
+elif [[ "$1" == "password" ]]; then
+  users_password
+else
+  echo "Invalid argument. Usage: $0 (user | delete)"
+fi
