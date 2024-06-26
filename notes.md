@@ -211,7 +211,16 @@ Most of the time we might actually want the opposite to happen. In order to make
 <details>
 <summary>How to perform arithmetic operations on numbers?</summary><b><br>
 
-$(( 1 + 2 ))
+The `let` command in shell scripting is used for performing arithmetic operations on integers within your shell script.<br>
+For example: <br>
+
+```
+num=5
+1. let add = $num+11
+2. let $num++
+3. let ++$num
+```
+
 </b>
 </details>
 
